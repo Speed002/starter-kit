@@ -1,7 +1,7 @@
 <template>
     <Head title="Page Title" />
     <div class="max-w-7xl mx-auto p-8">
-        Home
+        Dashboard
     </div>
 </template>
 

@@ -10,17 +10,19 @@
                 </div>
                 <div class="flex justify-between w-full">
                     <div class="hidden sm:flex sm:ml-6 space-x-8">
-                        <Link href="#" class="inline-flex items-center border-b-2 border-transparent hover:border-gray-200 text-sm font-medium text-gray-900">Home</Link>
-                        <Link href="#" class="inline-flex items-center border-b-2 border-transparent hover:border-gray-200 text-sm font-medium text-gray-900">Dashboard</Link>
+                        <Link :href="route('home')" class="inline-flex items-center border-b-2 border-transparent hover:border-gray-200 text-sm font-semibold text-gray-900">Home</Link>
+                        <Link :href="route('dashboard')" class="inline-flex items-center border-b-2 border-transparent hover:border-gray-200 text-sm font-semibold text-gray-900">Dashboard</Link>
                     </div>
-                    <!-- <div class="hidden sm:flex sm:ml-6 space-x-8">
-                        <Link href="#" class="inline-flex items-center border-b-2 border-transparent text-sm font-medium text-gray-900">Create an account</Link>
-                        <Link href="#" class="inline-flex items-center border-b-2 border-transparent text-sm font-medium text-gray-900">Sign in</Link>
-                    </div> -->
                 </div>
             </div>
             <div class="absolute inset-y-0 right-0 flex items-center space-x-3">
-                <Menu as="div" class="relative mr-3">
+
+                <div class="hidden sm:flex sm:ml-6 space-x-8">
+                        <Link :href="route('register')" class="inline-flex items-center border-b-2 border-transparent text-sm font-medium text-gray-900">Create an account</Link>
+                        <Link href="#" class="inline-flex items-center border-b-2 border-transparent text-sm font-medium text-gray-900">Sign in</Link>
+                </div>
+
+                <!-- <Menu as="div" class="relative mr-3">
                     <MenuButton class="flex items-center text-sm space-x-3">
                         <span class="font-medium text-gray">Alex</span>
                         <img src="https://ui-avatars.com/api/?name=Alex%20Garret-Smith" class="h-8 w-8 rounded-full" alt="">
@@ -42,7 +44,7 @@
                             </Link>
                         </MenuItem>
                     </MenuItems>
-                </Menu>
+                </Menu> -->
                 <!-- this will be for mobile -->
                 <DisclosureButton class="sm:hidden relative p-2 text-gray-900 hover:bg-gray-100">
                     <Bars3Icon v-if="!open" class="block h-6 w-6"/>
@@ -52,12 +54,12 @@
         </div>
         <DisclosurePanel class="sm:hidden">
             <div class="space-1 pb-3">
-                <Link href="#" class="block py-2 px-1 font-medium text-gray-900">Home</Link>
-                <Link href="#" class="block py-2 px-1 font-medium text-gray-900">Dashboard</Link>
+                <Link :href="route('home')" class="block py-2 px-1 font-semibold text-gray-900">Home</Link>
+                <Link :href="route('dashboard')" class="block py-2 px-1 font-semibold text-gray-900">Dashboard</Link>
             </div>
             <div class="space-1 pb-3">
-                <Link href="#" class="block py-2 px-1 font-medium text-gray-900">Create an account</Link>
-                <Link href="#" class="block py-2 px-1 font-medium text-gray-900">Sign in</Link>
+                <Link href="#" class="block py-2 px-1 font-semibold text-gray-900">Create an account</Link>
+                <Link href="#" class="block py-2 px-1 font-semibold text-gray-900">Sign in</Link>
             </div>
         </DisclosurePanel>
     </div>
