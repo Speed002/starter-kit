@@ -2,9 +2,11 @@
 
 namespace App\Http\Middleware;
 
+use App\Http\Resources\UserResource;
 use Inertia\Middleware;
 use Tighten\Ziggy\Ziggy;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 class HandleInertiaRequests extends Middleware
 {
@@ -45,6 +47,13 @@ class HandleInertiaRequests extends Middleware
                 ];
             },
             'config' => config()->get(['app.name']),
+            'auth' => [
+                'user' => $request->user() ? UserResource::make($request->user()) : null
+            ],
+            // This is a helper, this helps with routing
+            'ziggy' => [
+                'route_name' => Route::currentRouteName()
+            ]
         ]);
     }
 }

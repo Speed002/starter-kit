@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class LoginIndexController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth']);
+        $this->middleware(['guest']);
     }
     public function __invoke()
     {
-        return inertia()->render('Dashboard');
+        return inertia()->modal('Auth/Login')->baseRoute('home');
     }
 }
