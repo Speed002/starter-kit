@@ -44,7 +44,7 @@ class HandleInertiaRequests extends Middleware
                     'routes' => $ziggy->toArray()
                 ];
             },
-            'config' => config()->get(['app.name'])
+            'config' => config()->get(['app.name']),
         ]);
     }
 }
